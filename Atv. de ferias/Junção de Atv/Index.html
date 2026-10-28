@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EducaPro | Sistema Escolar</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="topo">
+        <a href="#" class="logo">
+            <span class="logo-icone">E</span>
+            <span>Educa<span class="destaque">Pro</span></span>
+        </a>
+
+        <span class="status">
+            <span class="bolinha"></span>
+            Sistema em funcionamento
+        </span>
+    </header>
+
+    <main class="container">
+
+        <section class="boas-vindas">
+            <div>
+                <p class="sobretitulo">PAINEL DE CONTROLE</p>
+                <h1>Seu espaço de <span class="destaque">aprendizagem.</span></h1>
+                <p class="descricao">
+                    Cadastre alunos, realize cálculos e acompanhe os resultados
+                    em um único lugar.
+                </p>
+            </div>
+
+            <div class="data-card">
+                <span>DATA DE HOJE</span>
+                <strong id="dataAtual">Carregando...</strong>
+            </div>
+        </section>
+
+        <section class="indicadores">
+            <article class="indicador">
+                <span class="indicador-icone azul">01</span>
+                <div>
+                    <p>Cadastro</p>
+                    <h2>Alunos</h2>
+                    <small>Dados e identificação</small>
+                </div>
+            </article>
+
+            <article class="indicador">
+                <span class="indicador-icone roxo">02</span>
+                <div>
+                    <p>Calculadora</p>
+                    <h2>Matemática</h2>
+                    <small>Operações numéricas</small>
+                </div>
+            </article>
+
+            <article class="indicador">
+                <span class="indicador-icone verde">03</span>
+                <div>
+                    <p>Avaliação</p>
+                    <h2>Desempenho</h2>
+                    <small>Média e situação escolar</small>
+                </div>
+            </article>
+        </section>
+
+        <div class="titulo-secao">
+            <div>
+                <p class="sobretitulo">FERRAMENTAS</p>
+                <h2>Área de trabalho</h2>
+            </div>
+            <span class="etiqueta">4 módulos disponíveis</span>
+        </div>
+
+        <section class="grade-modulos">
+
+            <!-- MÓDULO 1: CADASTRO -->
+            <article class="modulo">
+                <div class="modulo-cabecalho">
+                    <div class="modulo-icone azul">01</div>
+                    <div>
+                        <h3>Cadastro de aluno</h3>
+                        <p>Registre os dados do estudante.</p>
+                    </div>
+                </div>
+
+                <form id="formCadastro">
+                    <label for="nome">Nome completo</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex.: João da Silva"
+                        maxlength="80"
+                        required
+                    >
+
+                    <div class="campos-duplos">
+                        <div>
+                            <label for="idade">Idade</label>
+                            <input
+                                type="number"
+                                id="idade"
+                                placeholder="Ex.: 15"
+                                min="0"
+                                max="120"
+                                required
+                            >
+                        </div>
+
+                        <div>
+                            <label for="cidade">Cidade</label>
+                            <input
+                                type="text"
+                                id="cidade"
+                                placeholder="Ex.: Vitória"
+                                maxlength="60"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="botao botao-azul">
+                        Cadastrar aluno <span>→</span>
+                    </button>
+                </form>
+
+                <div class="resultado" id="resultadoCadastro" aria-live="polite">
+                    <span class="resultado-titulo">RESULTADO DO CADASTRO</span>
+                    <p>Nenhum aluno cadastrado ainda.</p>
+                </div>
+            </article>
+
+            <!-- MÓDULO 2: SOMA -->
+            <article class="modulo">
+                <div class="modulo-cabecalho">
+                    <div class="modulo-icone roxo">02</div>
+                    <div>
+                        <h3>Calculadora</h3>
+                        <p>Some dois números.</p>
+                    </div>
+                </div>
+
+                <form id="formSoma">
+                    <label for="numero1">Primeiro número</label>
+                    <input
+                        type="number"
+                        id="numero1"
+                        step="any"
+                        placeholder="Digite um número"
+                        required
+                    >
+
+                    <label for="numero2">Segundo número</label>
+                    <input
+                        type="number"
+                        id="numero2"
+                        step="any"
+                        placeholder="Digite outro número"
+                        required
+                    >
+
+                    <button type="submit" class="botao botao-roxo">
+                        Calcular soma <span>+</span>
+                    </button>
+                </form>
+
+                <div class="resultado" id="resultadoSoma" aria-live="polite">
+                    <span class="resultado-titulo">RESULTADO DA SOMA</span>
+                    <p>Aguardando os números.</p>
+                </div>
+            </article>
+
+            <!-- MÓDULO 3: MÉDIA -->
+            <article class="modulo">
+                <div class="modulo-cabecalho">
+                    <div class="modulo-icone verde">03</div>
+                    <div>
+                        <h3>Boletim escolar</h3>
+                        <p>Calcule a média de duas notas.</p>
+                    </div>
+                </div>
+
+                <form id="formMedia">
+                    <label for="nota1">Primeira nota</label>
+                    <input
+                        type="number"
+                        id="nota1"
+                        min="0"
+                        max="10"
+                        step="any"
+                        placeholder="Nota de 0 a 10"
+                        required
+                    >
+
+                    <label for="nota2">Segunda nota</label>
+                    <input
+                        type="number"
+                        id="nota2"
+                        min="0"
+                        max="10"
+                        step="any"
+                        placeholder="Nota de 0 a 10"
+                        required
+                    >
+
+                    <button type="submit" class="botao botao-verde">
+                        Calcular média <span>→</span>
+                    </button>
+                </form>
+
+                <div class="resultado" id="resultadoMedia" aria-live="polite">
+                    <span class="resultado-titulo">RESULTADO ESCOLAR</span>
+                    <p>Aguardando as notas.</p>
+                </div>
+            </article>
+
+            <!-- MÓDULO 4: DOM -->
+            <article class="modulo">
+                <div class="modulo-cabecalho">
+                    <div class="modulo-icone laranja">04</div>
+                    <div>
+                        <h3>Laboratório DOM</h3>
+                        <p>Selecione elementos da página.</p>
+                    </div>
+                </div>
+
+                <div class="exemplo-dom" id="paragrafosExercicio">
+                    <p>Primeiro parágrafo: fundamentos.</p>
+                    <p>Segundo parágrafo: JavaScript.</p>
+                    <p>Terceiro parágrafo: programação.</p>
+                </div>
+
+                <button type="button" id="btnDom" class="botao botao-laranja">
+                    Selecionar segundo parágrafo <span>→</span>
+                </button>
+
+                <div class="resultado" id="resultadoDom" aria-live="polite">
+                    <span class="resultado-titulo">RESULTADO DO DOM</span>
+                    <p>Clique no botão para selecionar um parágrafo.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- HISTÓRICO -->
+        <section class="historico">
+            <div class="historico-cabecalho">
+                <div>
+                    <p class="sobretitulo">ACOMPANHAMENTO</p>
+                    <h2>Histórico de operações</h2>
+                    <p class="descricao">
+                        Todas as ações realizadas nesta sessão aparecem aqui.
+                    </p>
+                </div>
+
+                <button type="button" id="btnLimparHistorico" class="botao-secundario">
+                    Limpar histórico
+                </button>
+            </div>
+
+            <div class="historico-lista">
+                <ul id="historico">
+                    <li class="historico-vazio">
+                        Nenhuma operação realizada ainda.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <p>EducaPro — Projeto de estudos em HTML, CSS e JavaScript.</p>
+            <p>Desenvolvido para praticar programação.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
